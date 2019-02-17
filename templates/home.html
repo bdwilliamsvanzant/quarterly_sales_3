@@ -1,0 +1,25 @@
+<h2>Salesman,inc.</h2>
+<p>Here at Salesman,inc. we keep track of your salesman's sales as well as product you purchase simply by adding it in the form. Both salesman and products have individual tables as well as a quick hits table below. </p>
+<h3>Buisness Records</h3>
+<table>
+  <tr>
+      <td>Total Sales: {{ qtotal()[0] + qtotal()[1] + qtotal()[2] + qtotal()[3]| currency }}</td>
+  </tr>
+  <tr>
+      <td>Total Salespeople: {{saleslist.length}}</td>
+  </tr>
+  <tr>
+      <td>Total Product Cost: {{pricetotal() | currency}}</td>
+  </tr>
+  <tr>
+      <td>Product Quanity: {{quantitytotal()}}</td>
+  </tr>
+
+</table>
+<br>
+<a href="#!list">
+    <button>Salesman</button>
+</a>
+<a href="#!products">
+  <button>Product</button>
+</a>

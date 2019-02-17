@@ -1,0 +1,34 @@
+<h2>Product</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Total</th>
+    <th></th>
+  </tr>
+  <!--This row shows a products name,price,and quantity, and total cost-->
+  <tr ng-repeat="item in product track by $index">
+    <td>{{ item.itemName }}</td>
+    <td>{{ item.itemPrice | currency}}</td>
+    <td>{{ item.itemQuantity}}</td>
+    <td>{{ item.itemPrice * item.itemQuantity | currency}}</td>
+    <td>
+      <!--<span ng-click="product_delete(item.id)"><img src="images/removeSales.svg" class="removeIcon"></span>-->
+    </td>
+  </tr>
+  <!--this row sums up the costs and display how many products-->
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total Price: {{pricetotal() | currency}}</td>
+    <td>Total Products: {{product.length}}</td>
+  </tr>
+</table>
+<a href="#!product_add">
+    <button>Add New Product</button>
+</a>
+<a href="#!">
+    <button>Home</button>
+</a>

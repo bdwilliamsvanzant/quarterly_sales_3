@@ -1,0 +1,40 @@
+<h2>Sales people</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Q1</th>
+    <th>Q2</th>
+    <th>Q3</th>
+    <th>Q4</th>
+    <th>Salesman's Total</th>
+    <th></th>
+  </tr>
+  <!--These row show the individual salesman's name, data per quarter, and their total-->
+  <tr ng-repeat="item in saleslist track by $index">
+    <td>{{ item.Name }}</td>
+    <td>{{ item.Q1 | currency}}</td>
+    <td>{{ item.Q2 | currency}}</td>
+    <td>{{ item.Q3 | currency}}</td>
+    <td>{{ item.Q4 | currency}}</td>
+    <td>{{item.Q1+item.Q2+item.Q3+item.Q4 | currency}}</td>
+    <td>
+     <!-- <span ng-click="delete(item.id)"><img src="images/removeSales.svg" class="removeIcon"></span> -->
+    </td>
+  </tr>
+  <!--This row sums up the quarters earnings as well as displays a grand total and how many salesman-->
+  <tr>
+    <td><b>Quarter Total</b></td>
+    <td>{{ qtotal()[0] | currency}}</td>
+    <td>{{ qtotal()[1]| currency}}</td>
+    <td>{{ qtotal()[2] | currency}}</td>
+    <td>{{ qtotal()[3] | currency}}</td>
+    <td>Total Sales: {{ qtotal()[0] + qtotal()[1] + qtotal()[2] + qtotal()[3]| currency }}</td>
+    <td>Total Salespeople: {{saleslist.length}}</td>
+  </tr>
+</table>
+<a href="#!add">
+    <button>Add New Salesman</button>
+</a>
+<a href="#!">
+    <button>Home</button>
+</a>
